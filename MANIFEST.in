@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include dandy *.css
+recursive-include dandy *.csv
+recursive-include dandy *.html
+recursive-include dandy *.ico
+recursive-include dandy *.js
+recursive-include dandy *.json
+recursive-include dandy *.md
+recursive-include dandy *.png
+recursive-include dandy *.py
+recursive-include dandy *.svg
+recursive-include dandy *.txt
+recursive-exclude dandy *.pyc
