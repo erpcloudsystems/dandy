@@ -1,0 +1,211 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-05-21 12:45:52.113419",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "cust_name",
+  "customer_phone",
+  "column_break_7",
+  "customer_name",
+  "date",
+  "store_section",
+  "store_id",
+  "type",
+  "floor",
+  "column_break_14",
+  "zone",
+  "area",
+  "state",
+  "section_break_18",
+  "star_analytics_table",
+  "section_break_181",
+  "totals_sub_total",
+  "totals_discount",
+  "column_break_21",
+  "totals_services",
+  "totals_taxes",
+  "totals_net_total",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "ST-AN:",
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "cust_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "cust_name.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Cuatomer Name"
+  },
+  {
+   "fetch_from": "cust_name.mobile_no",
+   "fieldname": "customer_phone",
+   "fieldtype": "Data",
+   "label": "Customer Phone"
+  },
+  {
+   "fieldname": "store_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Store ID",
+   "options": "Unit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "store_section",
+   "fieldtype": "Section Break",
+   "label": "Store"
+  },
+  {
+   "fetch_from": "store_id.type",
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "store_id.floor",
+   "fieldname": "floor",
+   "fieldtype": "Data",
+   "label": "Floor",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "store_id.zone",
+   "fieldname": "zone",
+   "fieldtype": "Data",
+   "label": "Zone",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "store_id.area",
+   "fieldname": "area",
+   "fieldtype": "Data",
+   "label": "Area",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "store_id.state",
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break",
+   "label": "Checks Data"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Star analytics",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_181",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "star_analytics_table",
+   "fieldtype": "Table",
+   "options": "Star analytics Table"
+  },
+  {
+   "default": "0",
+   "fieldname": "totals_sub_total",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total before tax and service",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "totals_discount",
+   "fieldtype": "Float",
+   "label": "Discount Value"
+  },
+  {
+   "default": "0",
+   "fieldname": "totals_services",
+   "fieldtype": "Float",
+   "label": "Service Charge"
+  },
+  {
+   "default": "0",
+   "fieldname": "totals_taxes",
+   "fieldtype": "Float",
+   "label": "Tax Value"
+  },
+  {
+   "default": "0",
+   "fieldname": "totals_net_total",
+   "fieldtype": "Float",
+   "label": "Total Check Value"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-05-22 12:20:36.668695",
+ "modified_by": "Administrator",
+ "module": "Dandy",
+ "name": "Star analytics",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

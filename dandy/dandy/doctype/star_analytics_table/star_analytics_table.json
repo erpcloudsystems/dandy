@@ -1,0 +1,90 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-05-22 01:18:12.764185",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "invc_id",
+  "invc_no",
+  "sub_total",
+  "discount",
+  "services",
+  "column_break_4",
+  "taxes",
+  "net_total"
+ ],
+ "fields": [
+  {
+   "fieldname": "sub_total",
+   "fieldtype": "Float",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Total before tax and service"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Float",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Discount Value"
+  },
+  {
+   "columns": 1,
+   "fieldname": "services",
+   "fieldtype": "Float",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Service Charge"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "taxes",
+   "fieldtype": "Float",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Tax Value"
+  },
+  {
+   "fieldname": "net_total",
+   "fieldtype": "Float",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Total Check Value"
+  },
+  {
+   "fieldname": "invc_id",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Check ID"
+  },
+  {
+   "fieldname": "invc_no",
+   "fieldtype": "Data",
+   "label": "Check NO"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-05-22 01:22:05.993103",
+ "modified_by": "Administrator",
+ "module": "Dandy",
+ "name": "Star analytics Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
