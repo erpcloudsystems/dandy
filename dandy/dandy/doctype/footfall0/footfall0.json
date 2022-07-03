@@ -12,9 +12,6 @@
   "column_break_2",
   "shift",
   "atreem_section",
-  "atreem",
-  "night_atreem",
-  "amended_from",
   "amended_from"
  ],
  "fields": [
@@ -55,18 +52,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "depends_on": "eval:doc.shift == 'Morning Shift'",
-   "fieldname": "atreem",
-   "fieldtype": "Table",
-   "options": "atreem"
-  },
-  {
-   "depends_on": "eval:doc.shift == 'Night Shift'",
-   "fieldname": "night_atreem",
-   "fieldtype": "Table",
-   "options": "night atreem"
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -80,7 +65,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Footfall0",
+   "options": "Footfall",
    "print_hide": 1,
    "read_only": 1
   }
@@ -88,7 +73,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-05-22 00:24:17.532615",
+ "modified": "2022-05-29 14:04:45.904429",
  "modified_by": "Administrator",
  "module": "Dandy",
  "name": "Footfall0",

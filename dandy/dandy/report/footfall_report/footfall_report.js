@@ -5,14 +5,14 @@
 frappe.query_reports["FootFall report"] = {
 	"filters": [
 		{
-			"fieldname": "date",
+			"fieldname": "from_date",
 			"label": __("From Date"),
 			"fieldtype": "Date",
 			"default": frappe.defaults.get_user_default("year_start_date"),
 			"reqd": 1
 		},
 		{
-			"fieldname":"date",
+			"fieldname":"to_date",
 			"label": __("To Date"),
 			"fieldtype": "Date",
 			"default": frappe.defaults.get_user_default("year_end_date"),
@@ -23,6 +23,13 @@ frappe.query_reports["FootFall report"] = {
 			"label": __("Footfall Location"),
 			"fieldtype": "Link",
 			"options" : "Footfall Location",
+			"reqd": 0
+		},
+		{
+			"fieldname": "shift",
+			"label": __("Shift"),
+			"fieldtype": "Select",
+			"options" : ["","Morning Shift","Night Shift"],
 			"reqd": 0
 		}
 ]

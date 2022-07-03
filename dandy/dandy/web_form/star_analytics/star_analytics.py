@@ -4,4 +4,6 @@ import frappe
 
 def get_context(context):
 	# do your magic here
-	pass
+	frappe.web_form.after_load = () => {
+    frappe.msgprint('Please fill all values carefully');
+}

@@ -7,24 +7,22 @@ frappe.query_reports["Star Analytics Report"] = {
 
 
 		{
-			"fieldname":"typy",
+			"fieldname": "type",
 			"label": __("Report Type"),
 			"fieldtype": "Select",
-			"options" : ["","yearly","Monthly", "Daily"],
-			"reqd": 0
+			"options":["","Daily","Monthly","Yearly"],
+			"reqd": 1
 		},
 		{
 			"fieldname": "from_date",
 			"label": __("From Date"),
 			"fieldtype": "Date",
-			"default": frappe.datetime.add_months(frappe.datetime.get_today(), -1),
 			"reqd": 1
 		},
 		{
 			"fieldname":"to_date",
 			"label": __("To Date"),
 			"fieldtype": "Date",
-			"default": frappe.datetime.add_months(frappe.datetime.get_today()),
 			"reqd": 1
 		},
 		{

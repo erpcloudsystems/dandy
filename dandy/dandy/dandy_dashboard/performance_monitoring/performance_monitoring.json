@@ -1,0 +1,73 @@
+{
+ "cards": [
+  {
+   "card": "Draft Stock Entry"
+  },
+  {
+   "card": "Submitted Stock Entry"
+  },
+  {
+   "card": "Draft Material Reuqest"
+  },
+  {
+   "card": "Submitted Material Reuqest"
+  },
+  {
+   "card": "Draft Request for Quotation"
+  },
+  {
+   "card": "Submitted Request for Quotation"
+  },
+  {
+   "card": "Draft Supplier Quotation"
+  },
+  {
+   "card": "Submitted Supplier Quotation"
+  },
+  {
+   "card": "Submitted Supplier Quotation"
+  },
+  {
+   "card": "Draft Purchase Order"
+  },
+  {
+   "card": "Submitted Purchase Order"
+  },
+  {
+   "card": "Draft Purchase Receipt"
+  },
+  {
+   "card": "Draft Purchase Invoice"
+  },
+  {
+   "card": "Submitted Purchase Invoice"
+  },
+  {
+   "card": "Submitted Payment Entry"
+  },
+  {
+   "card": "Submitted Leave Application"
+  },
+  {
+   "card": "Draft Leave Application"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Documents Activites",
+   "width": "Full"
+  }
+ ],
+ "creation": "2022-06-05 11:40:15.490984",
+ "dashboard_name": "Performance Monitoring ",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2022-06-16 10:44:28.801809",
+ "modified_by": "Administrator",
+ "module": "Dandy",
+ "name": "Performance Monitoring",
+ "owner": "Administrator"
+}
