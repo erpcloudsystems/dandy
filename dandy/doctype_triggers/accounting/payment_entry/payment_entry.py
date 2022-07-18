@@ -25,11 +25,11 @@ def on_submit(doc, method=None):
     advanced_amount = 0
     total_paid_amount = 0
     
-    if doc.contract_repayment_schedule == 1:
+    if doc.reference_doctype == "PMS Lease Contract" and doc.contract_repayment_schedule == 1:
         repayment_schedule = frappe.get_doc('PMS Repayment Schedule', {'name': doc.row_name, 'parent': doc.reference_link})
         if repayment_schedule.outstanding_amount == 0:
-            repayment_schedule.is_paid == 1
-        amount =  frappe.db.sql(""" select sum(`tabPayment Entry`.paid_amount) as paid_amount
+            repayment_schedule.is_paid = 1
+        amount = frappe.db.sql(""" select sum(`tabPayment Entry`.paid_amount) as paid_amount
                                    from `tabPayment Entry` 
                                    where `tabPayment Entry`.row_name ='{rowname}'
                                    and `tabPayment Entry`.docstatus =1
