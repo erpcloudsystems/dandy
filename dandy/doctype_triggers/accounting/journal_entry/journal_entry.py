@@ -20,9 +20,10 @@ def validate(doc, method=None):
     pass
 @frappe.whitelist()
 def on_submit(doc, method=None):
-    repayment_schedule = frappe.get_doc('PMS Repayment Schedule', {'name': doc.row_name, 'parent': doc.reference_link})
-    repayment_schedule.electricity_paid = 1
-    repayment_schedule.save()
+    if doc.reference_doctype == "PMS Lease Contract":
+        repayment_schedule = frappe.get_doc('PMS Repayment Schedule', {'name': doc.row_name, 'parent': doc.reference_link})
+        repayment_schedule.electricity_paid = 1
+        repayment_schedule.save()
 @frappe.whitelist()
 def on_cancel(doc, method=None):
     pass
@@ -34,9 +35,10 @@ def before_save(doc, method=None):
     pass
 @frappe.whitelist()
 def before_cancel(doc, method=None):
-    repayment_schedule = frappe.get_doc('PMS Repayment Schedule', {'name': doc.row_name, 'parent': doc.reference_link})
-    repayment_schedule.electricity_paid = 0
-    repayment_schedule.save()
+    if doc.reference_doctype == "PMS Lease Contract":
+        repayment_schedule = frappe.get_doc('PMS Repayment Schedule', {'name': doc.row_name, 'parent': doc.reference_link})
+        repayment_schedule.electricity_paid = 0
+        repayment_schedule.save()
 @frappe.whitelist()
 def on_update(doc, method=None):
     pass
