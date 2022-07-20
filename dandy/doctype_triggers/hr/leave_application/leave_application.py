@@ -11,13 +11,13 @@ def after_insert(doc, method=None):
     pass
 @frappe.whitelist()
 def onload(doc, method=None):
-    pass
+    doc.status = doc.workflow_state
 @frappe.whitelist()
 def before_validate(doc, method=None):
     pass
 @frappe.whitelist()
 def validate(doc, method=None):
-    pass
+        doc.status = doc.workflow_state
 @frappe.whitelist()
 def on_submit(doc, method=None):
     pass
