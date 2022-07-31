@@ -20,7 +20,7 @@ def validate(doc, method=None):
     pass
 @frappe.whitelist()
 def on_submit(doc, method=None):
-   if doc.reference_doctype == "PMS Lease Contract":
+    if doc.reference_doctype == "PMS Lease Contract" and doc.row_name and doc.revenue_type != "Promotions":
         repayment_schedule = frappe.get_doc('PMS Repayment Schedule', {'name': doc.row_name, 'parent': doc.pms_lease_contract})
         repayment_schedule.is_invoiced = 1
         repayment_schedule.sales_invoice = doc.name
@@ -29,10 +29,16 @@ def on_submit(doc, method=None):
         contract = frappe.get_doc("PMS Lease Contract", doc.pms_lease_contract)
         repayment_schedule.save()
         contract.save()
+    if doc.reference_doctype == "PMS Lease Contract" and doc.revenue_type == "Promotions":
+        contract = frappe.get_doc("PMS Lease Contract", doc.pms_lease_contract)
+        contract.invoice = doc.name
+        contract.invoice_amount_ = doc.grand_total
+        contract.save()
 
+    
 @frappe.whitelist()
 def on_cancel(doc, method=None):
-    if doc.reference_doctype == "PMS Lease Contract":
+    if doc.reference_doctype == "PMS Lease Contract" and doc.row_name and doc.revenue_type != "Promotions":
         repayment_schedule = frappe.get_doc('PMS Repayment Schedule', {'name': doc.row_name, 'parent': doc.pms_lease_contract})
         repayment_schedule.is_invoiced = 0
         repayment_schedule.sales_invoice = ""
@@ -40,7 +46,11 @@ def on_cancel(doc, method=None):
         repayment_schedule.save()
         contract = frappe.get_doc("PMS Lease Contract", doc.pms_lease_contract)
         contract.save()
-
+    if doc.reference_doctype == "PMS Lease Contract" and doc.revenue_type == "Promotions":
+        contract = frappe.get_doc("PMS Lease Contract", doc.pms_lease_contract)
+        contract.invoice = ""
+        contract.invoice_amount_ = 0
+        contract.save()
 @frappe.whitelist()
 def on_update_after_submit(doc, method=None):
     pass

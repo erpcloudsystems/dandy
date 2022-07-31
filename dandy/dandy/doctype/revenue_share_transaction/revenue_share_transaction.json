@@ -9,6 +9,7 @@
  "field_order": [
   "naming_series",
   "cust_name",
+  "pms_lease_contract",
   "customer_phone",
   "column_break_7",
   "customer_name",
@@ -31,6 +32,7 @@
   "totals_services",
   "totals_taxes",
   "totals_net_total",
+  "amended_from",
   "amended_from"
  ],
  "fields": [
@@ -86,6 +88,7 @@
    "label": "Store"
   },
   {
+   "fetch_from": "pms_lease_contract.unit",
    "fieldname": "store_id",
    "fieldtype": "Link",
    "in_global_search": 1,
@@ -208,12 +211,18 @@
    "fieldname": "revenue_share_transaction_details",
    "fieldtype": "Table",
    "options": "Revenue Share Transaction Details"
+  },
+  {
+   "fieldname": "pms_lease_contract",
+   "fieldtype": "Link",
+   "label": "PMS Lease Contract",
+   "options": "PMS Lease Contract"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-05-30 14:30:19.301645",
+ "modified": "2022-07-24 12:21:24.740332",
  "modified_by": "Administrator",
  "module": "Dandy",
  "name": "Revenue Share Transaction",

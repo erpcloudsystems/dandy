@@ -17,7 +17,7 @@ def before_validate(doc, method=None):
     pass
 @frappe.whitelist()
 def validate(doc, method=None):
-        doc.status = doc.workflow_state
+    doc.status = doc.workflow_state
 @frappe.whitelist()
 def on_submit(doc, method=None):
     pass

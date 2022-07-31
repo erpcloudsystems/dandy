@@ -22,12 +22,14 @@
    "in_global_search": 1,
    "in_list_view": 1,
    "in_preview": 1,
-   "label": "Check ID"
+   "label": "Check ID",
+   "reqd": 1
   },
   {
    "fieldname": "invc_no",
    "fieldtype": "Data",
-   "label": "Check NO"
+   "label": "Check NO",
+   "reqd": 1
   },
   {
    "fieldname": "sub_total",
@@ -35,7 +37,8 @@
    "in_global_search": 1,
    "in_list_view": 1,
    "in_preview": 1,
-   "label": "Total before tax and service"
+   "label": "Total before tax and service",
+   "non_negative": 1
   },
   {
    "fieldname": "discount",
@@ -43,7 +46,8 @@
    "in_global_search": 1,
    "in_list_view": 1,
    "in_preview": 1,
-   "label": "Discount Value"
+   "label": "Discount Value",
+   "non_negative": 1
   },
   {
    "columns": 1,
@@ -52,7 +56,8 @@
    "in_global_search": 1,
    "in_list_view": 1,
    "in_preview": 1,
-   "label": "Service Charge"
+   "label": "Service Charge",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_4",
@@ -65,7 +70,8 @@
    "in_global_search": 1,
    "in_list_view": 1,
    "in_preview": 1,
-   "label": "Tax Value"
+   "label": "Tax Value",
+   "reqd": 1
   },
   {
    "fieldname": "net_total",
@@ -73,13 +79,14 @@
    "in_global_search": 1,
    "in_list_view": 1,
    "in_preview": 1,
-   "label": "Total Check Value"
+   "label": "Total Check Value",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-05-29 18:10:02.757171",
+ "modified": "2022-07-31 13:10:20.092717",
  "modified_by": "Administrator",
  "module": "Dandy",
  "name": "Revenue Share Transaction Details",

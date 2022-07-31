@@ -6,3 +6,15 @@ frappe.ui.form.on('Revenue Share Transaction', {
 
 	// }
 });
+frappe.ui.form.on("Revenue Share Transaction", {
+	setup: function(frm) {
+     frm.set_query("pms_lease_contract", function() {
+	 return {
+	  filters: [
+	  ["PMS Lease Contract","party", "=", frm.doc.cust_name],
+	  ["PMS Lease Contract","docstatus", "=", 1]
+	  ]
+	 };
+	 });
+	}
+	});

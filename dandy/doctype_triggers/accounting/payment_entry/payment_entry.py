@@ -25,7 +25,7 @@ def on_submit(doc, method=None):
     advanced_amount = 0
     total_paid_amount = 0
     
-    if doc.reference_doctype == "PMS Lease Contract" and doc.contract_repayment_schedule == 1 and doc.docstatus == 0:
+    if doc.reference_doctype == "PMS Lease Contract" and doc.contract_repayment_schedule == 1 and doc.docstatus == 0 and doc.revenue_type != "Promotions":
         repayment_schedule = frappe.get_doc('PMS Repayment Schedule', {'name': doc.row_name, 'parent': doc.reference_link})
         if repayment_schedule.outstanding_amount == 0:
             repayment_schedule.is_paid = 1
@@ -45,7 +45,12 @@ def on_submit(doc, method=None):
             advanced_amount = contract.base_advanced_amount
             contract.base_total_amount_paid = total_paid_amount + advanced_amount
             contract.total_amount_paid = contract.base_total_amount_paid / contract.conversion_rate
-    
+    if doc.reference_doctype == "PMS Lease Contract" and doc.revenue_type == "Promotions":
+        contract = frappe.get_doc("PMS Lease Contract", doc.reference_link)
+       
+        contract.promotion_paid_amount = doc.paid_amount
+        contract.promotion__payment_entry = doc.name
+
         contract.save()
         if contract.insurance_pe == doc.name:
             contract.insurance_paid = 1
@@ -62,7 +67,7 @@ def on_cancel(doc, method=None):
     advanced_amount = 0
     total_paid_amount = 0
     total_invoice = 0
-    if doc.reference_doctype == "PMS Lease Contract" and doc.contract_repayment_schedule == 1 :
+    if doc.reference_doctype == "PMS Lease Contract" and doc.contract_repayment_schedule == 1 and doc.revenue_type != "Promotions":
         repayment_schedule = frappe.get_doc('PMS Repayment Schedule', {'name': doc.row_name, 'parent': doc.reference_link})
         if repayment_schedule.outstanding_amount > 0:
             repayment_schedule.is_paid == 0
